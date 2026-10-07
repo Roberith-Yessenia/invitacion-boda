@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Roberith & Yessenia | Nuestra Boda</title>
+
+    <!-- =========================================================
+         METADATOS PARA REDES SOCIALES
+    ========================================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roberith & Yessenia | Nuestra Boda">
+    <meta property="og:description" content="Te invitamos a celebrar con nosotros este día tan especial.">
+    <meta property="og:image" content="FOTO_PORTADA_AQUI.jpg">
+
+    <!-- =========================================================
+         FUENTES
+    ========================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+
+        /* =========================================================
+           VARIABLES / PALETA
+        ========================================================== */
+
+        :root {
+            --olive-dark: #3f4a2f;
+            --olive: #68734a;
+            --olive-light: #89936b;
+
+            --cream: #f5f0e6;
+            --cream-dark: #e9e1d0;
+
+            --gold: #b39a5b;
+            --gold-light: #d0bd82;
+
+            --brown: #514637;
+
+            --text-dark: #303329;
+            --text-light: #6d6d62;
+
+            --white: #ffffff;
+
+            --font-title: 'Bodoni Moda', serif;
+            --font-cursive: 'Great Vibes', cursive;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+       
+        /* =========================================================
+           REPRODUCTOR DE MÚSICA
+        ========================================================== */
+
+        .music-player {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 1000;
+
+            width: 52px;
+            height: 52px;
+
+            border-radius: 50%;
+
+            background: var(--olive-dark);
+            color: var(--cream);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+
+            transition: all 0.3s ease;
+        }
+
+        .music-player:hover {
+            transform: scale(1.08);
+            background: var(--gold);
+        }
+
+        .music-player.playing i {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* =========================================================
+           PORTADA
+        ========================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px;
+
+            color: var(--white);
+
+            background:
+                linear-gradient(
+                    rgba(42, 50, 32, 0.58),
+                    rgba(42, 50, 32, 0.58)
+                ),
+
+                url("portada.jpg")
+                center / cover no-repeat;
+        }
+
+        /* FOTO_PORTADA_AQUI.jpg
+           ---------------------------------------------------------
+           REEMPLAZA ESTE ARCHIVO POR LA FOTO PRINCIPAL.
+        */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 25px;
+
+            border: 1px solid rgba(222,205,151,0.7);
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 850px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+
+            color: var(--cream);
+        }
+
+        .hero-title {
+            font-family: var(--font-cursive);
+
+            font-size: clamp(4rem, 9vw, 7rem);
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            margin: 10px 0 20px;
+
+            text-shadow:
+                0 3px 15px rgba(0,0,0,0.35);
+        }
+
+        .hero-date {
+            display: inline-block;
+
+            padding: 12px 30px;
+
+            border-top: 1px solid var(--gold-light);
+            border-bottom: 1px solid var(--gold-light);
+
+            font-family: var(--font-title);
+
+            letter-spacing: 4px;
+
+            font-size: 1rem;
+        }
+
+        .hero-quote {
+            max-width: 650px;
+
+            margin: 25px auto 0;
+
+            font-family: var(--font-title);
+
+            font-style: italic;
+
+            font-size: 1rem;
+
+            line-height: 1.8;
+        }
+
+        .scroll-down {
+            position: absolute;
+
+            bottom: 30px;
+
+            color: var(--white);
+
+            font-size: 1.3rem;
+
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%,20%,50%,80%,100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-12px);
+            }
+
+            60% {
+                transform: translateY(-6px);
+            }
+        }
+
+
+        /* =========================================================
+           SECCIONES
+        ========================================================== */
+
+        section {
+            padding: 90px 25px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        .section-title {
+            font-family: var(--font-title);
+
+            font-size: clamp(2rem, 5vw, 2.7rem);
+
+            color: var(--olive-dark);
+
+            margin-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: "◆";
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 0.65rem;
+
+            margin-top: 12px;
+        }
+
+        .section-intro {
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            color: var(--text-light);
+
+            line-height: 1.8;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================================================
+           INTRODUCCIÓN
+        ========================================================== */
+
+        .intro-section {
+            background: var(--cream);
+        }
+
+        .intro-layout {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 55px;
+
+            align-items: center;
+
+            margin-top: 45px;
+
+            text-align: left;
+        }
+
+        .intro-photo {
+            position: relative;
+        }
+
+        .intro-photo img {
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+
+            border-radius: 2px;
+
+            box-shadow:
+                15px 15px 0 var(--olive-light);
+        }
+
+        .intro-text {
+            padding: 20px;
+        }
+
+        .intro-text h3 {
+            font-family: var(--font-cursive);
+
+            font-size: 3rem;
+
+            color: var(--olive);
+
+            font-weight: 400;
+
+            margin-bottom: 15px;
+        }
+
+        .intro-text p {
+            color: var(--text-light);
+
+            line-height: 1.9;
+
+            font-size: 0.95rem;
+        }
+
+
+        /* =========================================================
+           CUENTA REGRESIVA
+        ========================================================== */
+
+        .countdown-section {
+            background: var(--olive-dark);
+
+            color: var(--white);
+
+            max-width: none;
+        }
+
+        .countdown-section .section-title {
+            color: var(--cream);
+        }
+
+        .countdown-container {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .time-box {
+            min-width: 105px;
+
+            padding: 18px 20px;
+
+            border: 1px solid rgba(210,190,130,0.45);
+
+            background: rgba(255,255,255,0.05);
+        }
+
+        .time-box span {
+            display: block;
+
+            font-family: var(--font-title);
+
+            font-size: 2.3rem;
+
+            color: var(--gold-light);
+        }
+
+        .time-box label {
+            display: block;
+
+            margin-top: 5px;
+
+            font-size: 0.68rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            color: var(--cream-dark);
+        }
+
+
+        /* =========================================================
+           MOMENTOS DEL DÍA
+        ========================================================== */
+
+        .events-section {
+            background: var(--cream-dark);
+        }
+
+        .events-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(270px, 1fr));
+
+            gap: 25px;
+
+            margin-top: 45px;
+        }
+
+        .event-card {
+            background: var(--white);
+
+            padding: 40px 25px;
+
+            border-top: 3px solid var(--olive);
+
+            box-shadow: 0 8px 25px rgba(48,51,41,0.07);
+
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card i {
+            font-size: 2rem;
+
+            color: var(--gold);
+
+            margin-bottom: 18px;
+        }
+
+        .event-card h3 {
+            font-family: var(--font-title);
+
+            font-size: 1.4rem;
+
+            color: var(--olive-dark);
+
+            margin-bottom: 15px;
+        }
+
+        .event-time {
+            font-family: var(--font-title);
+
+            font-size: 1.4rem;
+
+            color: var(--gold);
+
+            margin-bottom: 10px;
+        }
+
+        .event-card p {
+            color: var(--text-light);
+
+            line-height: 1.6;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================================================
+           BOTONES
+        ========================================================== */
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            background: var(--olive-dark);
+
+            color: var(--white);
+
+            padding: 12px 23px;
+
+            border-radius: 2px;
+
+            text-decoration: none;
+
+            font-size: 0.72rem;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            margin-top: 18px;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--gold);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           LUGARES
+        ========================================================== */
+
+        .locations-section {
+            background: var(--cream);
+        }
+
+        .location-card {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            margin-top: 45px;
+
+            background: var(--white);
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+        }
+
+        .location-card.reverse {
+            margin-top: 30px;
+        }
+
+        .location-photo {
+            min-height: 330px;
+
+            background:
+                linear-gradient(
+                    rgba(63,74,47,0.12),
+                    rgba(63,74,47,0.12)
+                ),
+                url("FOTO_LUGAR_1_AQUI.jpg")
+                center / cover no-repeat;
+        }
+
+        .location-card.reverse .location-photo {
+            background-image:
+                linear-gradient(
+                    rgba(63,74,47,0.12),
+                    rgba(63,74,47,0.12)
+                ),
+                url("FOTO_LUGAR_2_AQUI.jpg");
+        }
+
+        .location-info {
+            padding: 45px 35px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .location-info i {
+            font-size: 2rem;
+
+            color: var(--gold);
+
+            margin-bottom: 15px;
+        }
+
+        .location-info h3 {
+            font-family: var(--font-title);
+
+            font-size: 1.5rem;
+
+            color: var(--olive-dark);
+
+            margin-bottom: 12px;
+        }
+
+        .location-info p {
+            color: var(--text-light);
+
+            font-size: 0.9rem;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================================
+           ITINERARIO
+        ========================================================== */
+
+        .timeline-section {
+            background: var(--olive-dark);
+
+            max-width: none;
+
+            color: var(--white);
+        }
+
+        .timeline-section .section-title {
+            color: var(--cream);
+        }
+
+        .timeline {
+            position: relative;
+
+            max-width: 800px;
+
+            margin: 55px auto 0;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            left: 50%;
+
+            width: 1px;
+
+            background: var(--gold);
+
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            width: 50%;
+
+            padding: 0 35px 35px;
+
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+
+            text-align: left;
+        }
+
+        .timeline-item::after {
+            content: "";
+
+            position: absolute;
+
+            top: 5px;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+
+            border: 3px solid var(--olive-dark);
+
+            box-shadow: 0 0 0 1px var(--gold);
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -5px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -5px;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.06);
+
+            padding: 18px 22px;
+
+            border: 1px solid rgba(210,190,130,0.2);
+        }
+
+        .timeline-time {
+            display: block;
+
+            color: var(--gold-light);
+
+            font-size: 0.75rem;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 6px;
+        }
+
+        .timeline-content h4 {
+            font-family: var(--font-title);
+
+            font-size: 1.2rem;
+
+            color: var(--cream);
+        }
+
+
+        /* =========================================================
+           FOTO DESTACADA
+        ========================================================== */
+
+        .featured-photo {
+            max-width: none;
+
+            padding: 0;
+
+            position: relative;
+
+            height: 500px;
+
+            background:
+                linear-gradient(
+                    rgba(30,38,24,0.2),
+                    rgba(30,38,24,0.2)
+                ),
+                url("FOTO_DESTACADA_AQUI.jpg")
+                center / cover no-repeat;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .featured-photo-frame {
+            width: 75%;
+            height: 75%;
+
+            border: 1px solid rgba(255,255,255,0.65);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .featured-photo-text {
+            color: var(--white);
+
+            font-family: var(--font-cursive);
+
+            font-size: clamp(2.8rem, 7vw, 5rem);
+
+            text-shadow: 0 3px 15px rgba(0,0,0,0.4);
+        }
+
+
+        /* =========================================================
+           DETALLES
+        ========================================================== */
+
+        .details-section {
+            background: var(--cream-dark);
+        }
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+
+            margin-top: 40px;
+        }
+
+        .info-box {
+            background: var(--white);
+
+            padding: 35px 25px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+
+        .info-box i {
+            color: var(--gold);
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+        }
+
+        .info-box h4 {
+            font-family: var(--font-title);
+
+            color: var(--olive-dark);
+
+            font-size: 1.25rem;
+
+            margin-bottom: 12px;
+        }
+
+        .info-box p {
+            color: var(--text-light);
+
+            font-size: 0.88rem;
+
+            line-height: 1.7;
+        }
+
+
+       
+
+        /* =========================================================
+           GALERÍA
+        ========================================================== */
+
+        .gallery-section {
+            background: var(--cream-dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(12, 1fr);
+
+            grid-auto-rows: 190px;
+
+            gap: 15px;
+
+            margin-top: 45px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+
+            position: relative;
+
+            background: var(--olive-light);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Foto grande */
+        .gallery-item:nth-child(1) {
+            grid-column: span 7;
+
+            grid-row: span 2;
+        }
+
+        /* Foto vertical */
+        .gallery-item:nth-child(2) {
+            grid-column: span 5;
+
+            grid-row: span 2;
+        }
+
+        /* Foto pequeña */
+        .gallery-item:nth-child(3) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 4;
+        }
+
+        .gallery-item:nth-child(5) {
+            grid-column: span 4;
+        }
+
+
+        /* =========================================================
+           RSVP
+        ========================================================== */
+
+        .rsvp-section {
+            background: var(--olive-dark);
+
+            max-width: none;
+
+            color: var(--white);
+        }
+
+        .rsvp-section .section-title {
+            color: var(--cream);
+        }
+
+        .rsvp-section > p {
+            color: var(--cream-dark);
+        }
+
+        .rsvp-form {
+            background: var(--white);
+
+            padding: 40px;
+
+            border-radius: 2px;
+
+            max-width: 550px;
+
+            margin: 35px auto 0;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--text-dark);
+
+            font-size: 0.78rem;
+
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 2px;
+
+            font-family: var(--font-body);
+
+            font-size: 0.85rem;
+
+            outline: none;
+
+            transition: border 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--olive);
+        }
+
+        .rsvp-form .btn {
+            width: 100%;
+
+            background: var(--olive-dark);
+
+            font-size: 0.75rem;
+        }
+
+        .rsvp-form .btn:hover {
+            background: #536039;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        footer {
+            background: #303824;
+
+            color: var(--cream);
+
+            padding: 55px 20px;
+
+            font-family: var(--font-cursive);
+
+            font-size: 3rem;
+        }
+
+        footer small {
+            display: block;
+
+            font-family: var(--font-body);
+
+            font-size: 0.65rem;
+
+            letter-spacing: 2px;
+
+            color: var(--gold-light);
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================== */
+
+        @media (max-width: 768px) {
+
+            .hero::before {
+                inset: 15px;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .intro-layout {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .intro-photo img {
+                height: 400px;
+            }
+
+            .location-card {
+                grid-template-columns: 1fr;
+            }
+
+            .location-photo {
+                min-height: 280px;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item {
+                width: 100%;
+
+                left: 0 !important;
+
+                padding-left: 45px;
+
+                padding-right: 10px;
+
+                text-align: left !important;
+            }
+
+            .timeline-item::after {
+                left: 10px !important;
+
+                right: auto !important;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+
+                grid-auto-rows: 180px;
+            }
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(2) {
+                grid-column: span 2;
+
+                grid-row: span 2;
+            }
+
+            .gallery-item:nth-child(3),
+            .gallery-item:nth-child(4),
+            .gallery-item:nth-child(5) {
+                grid-column: span 1;
+            }
+
+            .featured-photo {
+                height: 400px;
+            }
+
+            .rsvp-form {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .hero-title {
+                font-size: 3.3rem;
+            }
+
+            .hero-date {
+                font-size: 0.8rem;
+
+                letter-spacing: 2px;
+            }
+
+            section {
+                padding: 70px 18px;
+            }
+
+            .countdown-container {
+                gap: 8px;
+            }
+
+            .time-box {
+                min-width: 75px;
+
+                padding: 13px 8px;
+            }
+
+            .time-box span {
+                font-size: 1.7rem;
+            }
+
+            .gallery-grid {
+                display: grid;
+
+                grid-template-columns: 1fr;
+
+                grid-auto-rows: 220px;
+            }
+
+            .gallery-item:nth-child(n) {
+                grid-column: span 1;
+
+                grid-row: span 1;
+            }
+
+            footer {
+                font-size: 2.5rem;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         BORDE DECORATIVO
+    ========================================================== -->
+
+    <div class="andean-border"></div>
+
+
+    <!-- =========================================================
+         MÚSICA
+    ========================================================== -->
+
+    <div
+        class="music-player"
+        id="musicToggle"
+        title="Reproducir / Pausar música"
+    >
+        <i class="fas fa-music"></i>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source
+            src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=wedding-piano-112191.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- =========================================================
+         PORTADA
+    ========================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-subtitle">
+                Nuestra Boda
+            </p>
+
+            <h1 class="hero-title">
+                Roberith & Yessenia
+            </h1>
+
+            <p class="hero-quote">
+                "El amor no consiste en mirarse el uno al otro,
+                sino en mirar juntos en la misma dirección."
+            </p>
+
+            <div class="hero-date">
+                19 · DICIEMBRE · 2026
+            </div>
+
+        </div>
+
+        <a href="#intro" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+
+    </header>
+
+
+    <!-- =========================================================
+         INTRODUCCIÓN + FOTO
+    ========================================================== -->
+
+    <section class="intro-section" id="intro">
+
+        <h2 class="section-title">
+            Un día para recordar
+        </h2>
+
+        <p class="section-intro">
+            Queremos compartir con ustedes uno de los momentos
+            más importantes de nuestras vidas.
+        </p>
+
+
+        <div class="intro-layout">
+
+            <div class="intro-photo">
+
+                <!-- =================================================
+                     FOTO 1 — FOTO DE LOS NOVIOS
+                     REEMPLAZA:
+                     FOTO_NOVIOS_AQUI.jpg
+                ================================================== -->
+
+                <img
+                    src="FOTO_NOVIOS_AQUI.jpg"
+                    alt="Roberith y Yessenia"
+                >
+
+            </div>
+
+
+            <div class="intro-text">
+
+                <h3>
+                    Con amor
+                </h3>
+
+                <p>
+                    Después de tantos momentos compartidos,
+                    queremos celebrar junto a nuestras familias
+                    y personas más importantes el comienzo de
+                    una nueva etapa.
+                </p>
+
+                <br>
+
+                <p>
+                    Será un día para encontrarnos, celebrar,
+                    compartir y guardar en nuestra memoria.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CUENTA REGRESIVA
+    ========================================================== -->
+
+    <section class="countdown-section" id="countdown">
+
+        <h2 class="section-title">
+            Falta muy poco
+        </h2>
+
+        <p class="section-intro">
+            La cuenta regresiva para nuestro gran día.
+        </p>
+
+
+        <div class="countdown-container">
+
+            <div class="time-box">
+                <span id="days">00</span>
+                <label>Días</label>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">00</span>
+                <label>Horas</label>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <label>Minutos</label>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <label>Segundos</label>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         MOMENTOS
+    ========================================================== -->
+
+    <section class="events-section">
+
+        <h2 class="section-title">
+            Los momentos
+        </h2>
+
+        <p class="section-intro">
+            Queremos compartir contigo cada momento de esta
+            celebración.
+        </p>
+
+
+        <div class="events-grid">
+
+            <!-- MISA -->
+
+            <div class="event-card">
+
+                <i class="fas fa-church"></i>
+
+                <h3>
+                    Misa Religiosa
+                </h3>
+
+                <div class="event-time">
+                    3:00 p. m.
+                </div>
+
+                <p>
+                    Parroquia Sagrado Corazón de Jesús
+                    de Carapongo.
+                </p>
+
+            </div>
+
+
+            <!-- RECEPCIÓN -->
+
+            <div class="event-card">
+
+                <i class="fas fa-glass-cheers"></i>
+
+                <h3>
+                    Recepción
+                </h3>
+
+                <div class="event-time">
+                    5:00 p. m.
+                </div>
+
+                <p>
+                    Local Las Titancas.
+                </p>
+
+            </div>
+
+
+            <!-- LLEGADA -->
+
+            <div class="event-card">
+
+                <i class="fas fa-heart"></i>
+
+                <h3>
+                    Llegada de los novios
+                </h3>
+
+                <div class="event-time">
+                    6:00 p. m.
+                </div>
+
+                <p>
+                    Comienza oficialmente nuestra celebración.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         LUGARES
+    ========================================================== -->
+
+    <section class="locations-section">
+
+        <h2 class="section-title">
+            ¿Dónde nos encontramos?
+        </h2>
+
+        <p class="section-intro">
+            Aquí podrás encontrar la ubicación de cada momento
+            de nuestra celebración.
+        </p>
+
+
+        <!-- PARROQUIA -->
+
+        <div class="location-card">
+
+            
+            <div class="location-info">
+
+                <i class="fas fa-church"></i>
+
+                <h3>
+                    Parroquia Sagrado Corazón
+                    de Jesús de Carapongo
+                </h3>
+
+                <p>
+                    Ceremonia religiosa
+                </p>
+
+                <p>
+                    3:00 p. m.
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/dPmPNxaCaQNdVMm87"
+                    target="_blank"
+                    class="btn"
+                >
+                    <i class="fas fa-location-dot"></i>
+                    Ver ubicación
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOCAL -->
+
+        <div class="location-card reverse">
+
+         
+
+            <div class="location-info">
+
+                <i class="fas fa-champagne-glasses"></i>
+
+                <h3>
+                    Local Las Titancas
+                </h3>
+
+                <p>
+                    Recepción y celebración
+                </p>
+
+                <p>
+                    Desde las 5:00 p. m.
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/2K9GA3JAV7UD9DrV7"
+                    target="_blank"
+                    class="btn"
+                >
+                    <i class="fas fa-location-dot"></i>
+                    Ver ubicación
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ITINERARIO
+    ========================================================== -->
+
+    <section class="timeline-section">
+
+        <h2 class="section-title">
+            Itinerario
+        </h2>
+
+        <p class="section-intro">
+            Estos serán los principales momentos de nuestro día.
+        </p>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-content">
+
+                    <span class="timeline-time">
+                        15:00 HRS
+                    </span>
+
+                    <h4>
+                        Misa Religiosa
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-content">
+
+                    <span class="timeline-time">
+                        17:00 HRS
+                    </span>
+
+                    <h4>
+                        Recepción en el Local
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-content">
+
+                    <span class="timeline-time">
+                        18:00 HRS
+                    </span>
+
+                    <h4>
+                        Llegada de los Novios
+                    </h4>
+
+                </div>
+
+            </div>
+
+
+            <!-- PUEDES AÑADIR MÁS MOMENTOS AQUÍ -->
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOTO DESTACADA
+    ========================================================== -->
+
+    <section class="featured-photo">
+
+        <!--
+            FOTO DESTACADA
+
+            REEMPLAZA:
+            FOTO_DESTACADA_AQUI.jpg
+        -->
+
+        <div class="featured-photo-frame">
+
+            <div class="featured-photo-text">
+                Roberith & Yessenia
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         DETALLES
+    ========================================================== -->
+
+    <section class="details-section">
+
+        <h2 class="section-title">
+            Detalles importantes
+        </h2>
+
+        <div class="info-grid">
+
+
+            <!-- VESTIMENTA -->
+
+            <div class="info-box">
+
+                <i class="fas fa-user-tie"></i>
+
+                <h4>
+                    Código de vestimenta
+                </h4>
+
+                <p>
+                    Formal / Rigurosa etiqueta.
+                </p>
+
+            </div>
+
+
+            <!-- REGALO -->
+
+            <div class="info-box">
+
+                <i class="fas fa-gift"></i>
+
+                <h4>
+                    Un detalle para nosotros
+                </h4>
+
+                <p>
+                    Si deseas hacernos un presente,
+                    puedes utilizar la siguiente cuenta:<p> 
+                        BBVA:0011-0814-0248506836</p>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+
+    <!-- =========================================================
+         GALERÍA DE FOTOS
+    ========================================================== -->
+
+    <section class="gallery-section">
+
+        <h2 class="section-title">
+            Nuestra historia
+        </h2>
+
+
+
+        <div class="gallery-grid">
+
+
+            <!-- =================================================
+                 FOTO 1 — GRANDE HORIZONTAL
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="FOTO_GALERIA_1_AQUI.jpg"
+                    alt="Fotografía de Roberith y Yessenia"
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 FOTO 2 — VERTICAL
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="FOTO_GALERIA_2_AQUI.jpg"
+                    alt="Fotografía de los novios"
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 FOTO 3
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="FOTO_GALERIA_3_AQUI.jpg"
+                    alt="Momento especial"
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 FOTO 4
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="FOTO_GALERIA_4_AQUI.jpg"
+                    alt="Momento especial"
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 FOTO 5
+            ================================================== -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="FOTO_GALERIA_5_AQUI.jpg"
+                    alt="Momento especial"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONFIRMACIÓN
+    ========================================================== -->
+
+    <section class="rsvp-section" id="rsvp">
+
+        <h2 class="section-title">
+            Confirmar asistencia
+        </h2>
+
+        <p>
+            Por favor confirma tu presencia antes del
+            15 de noviembre.
+        </p>
+
+
+        <form class="rsvp-form" id="whatsappForm">
+
+
+            <!-- NOMBRE -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Nombre y Apellidos:
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="Ej. Juan Pérez"
+                >
+
+            </div>
+
+
+            <!-- ASISTENCIA -->
+
+            <div class="form-group">
+
+                <label for="attendance">
+                    ¿Asistirás?
+                </label>
+
+                <select id="attendance" required>
+
+                    <option value="Sí, asistiré con mucho gusto">
+                        Sí, asistiré con mucho gusto
+                    </option>
+
+                    <option value="Lamentablemente no podré asistir">
+                        Lamentablemente no podré asistir
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PASES -->
+
+            <div class="form-group">
+
+                <label for="passes">
+                    Número de pases a confirmar:
+                </label>
+
+                <input
+                    type="number"
+                    id="passes"
+                    min="1"
+                    max="5"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+
+            <!-- MENSAJE -->
+
+            <div class="form-group">
+
+                <label for="message">
+                    Mensaje para los novios (Opcional):
+                </label>
+
+                <textarea
+                    id="message"
+                    rows="3"
+                    placeholder="Escribe un deseo o mensaje..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn"
+            >
+
+                <i class="fab fa-whatsapp"></i>
+
+                Enviar confirmación
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <p>
+            Roberith & Yessenia
+        </p>
+
+        <small>
+            19 · DICIEMBRE · 2026
+        </small>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+
+        /* =========================================================
+           CUENTA REGRESIVA
+
+           FECHA CORRECTA:
+           19 DE DICIEMBRE DE 2026
+           3:00 PM
+        ========================================================== */
+
+        const weddingDate =
+            new Date("December 19, 2026 15:00:00").getTime();
+
+
+        const timer = setInterval(() => {
+
+            const now =
+                new Date().getTime();
+
+            const difference =
+                weddingDate - now;
+
+
+            if (difference > 0) {
+
+                const days =
+                    Math.floor(
+                        difference /
+                        (1000 * 60 * 60 * 24)
+                    );
+
+                const hours =
+                    Math.floor(
+                        (difference %
+                        (1000 * 60 * 60 * 24)) /
+                        (1000 * 60 * 60)
+                    );
+
+                const minutes =
+                    Math.floor(
+                        (difference %
+                        (1000 * 60 * 60)) /
+                        (1000 * 60)
+                    );
+
+                const seconds =
+                    Math.floor(
+                        (difference %
+                        (1000 * 60)) /
+                        1000
+                    );
+
+
+                document.getElementById("days").innerText =
+                    days < 10 ? "0" + days : days;
+
+                document.getElementById("hours").innerText =
+                    hours < 10 ? "0" + hours : hours;
+
+                document.getElementById("minutes").innerText =
+                    minutes < 10 ? "0" + minutes : minutes;
+
+                document.getElementById("seconds").innerText =
+                    seconds < 10 ? "0" + seconds : seconds;
+
+            }
+
+            else {
+
+                clearInterval(timer);
+
+                document.getElementById("countdown").innerHTML = `
+
+                    <h2 class="section-title">
+                        ¡Hoy es el gran día!
+                    </h2>
+
+                    <p class="section-intro">
+                        Roberith & Yessenia
+                    </p>
+
+                `;
+
+            }
+
+        }, 1000);
+
+
+
+        /* =========================================================
+           REPRODUCTOR DE MÚSICA
+        ========================================================== */
+
+        const musicToggle =
+            document.getElementById("musicToggle");
+
+        const bgMusic =
+            document.getElementById("bgMusic");
+
+        let isPlaying = false;
+
+
+        musicToggle.addEventListener("click", () => {
+
+            if (isPlaying) {
+
+                bgMusic.pause();
+
+                musicToggle.classList.remove("playing");
+
+            }
+
+            else {
+
+                bgMusic.play()
+                    .catch(error => {
+                        console.log(
+                            "La reproducción automática fue bloqueada.",
+                            error
+                        );
+                    });
+
+                musicToggle.classList.add("playing");
+
+            }
+
+            isPlaying = !isPlaying;
+
+        });
+
+
+
+        /* =========================================================
+           CONFIRMACIÓN POR WHATSAPP
+
+           NÚMERO:
+           +51 973 641 507
+
+           Para WhatsApp se utiliza:
+           51973641507
+        ========================================================== */
+
+        document
+            .getElementById("whatsappForm")
+            .addEventListener("submit", function(e) {
+
+                e.preventDefault();
+
+
+                const phoneNumber =
+                    "51973641507";
+
+
+                const name =
+                    document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+
+                const attendance =
+                    document
+                    .getElementById("attendance")
+                    .value;
+
+
+                const passes =
+                    document
+                    .getElementById("passes")
+                    .value;
+
+
+                const message =
+                    document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
+
+                let text =
+                    "*Confirmación de Asistencia - Boda Roberith & Yessenia*%0A%0A";
+
+
+                text +=
+                    "*Nombre:* " +
+                    encodeURIComponent(name) +
+                    "%0A";
+
+
+                text +=
+                    "*Estado:* " +
+                    encodeURIComponent(attendance) +
+                    "%0A";
+
+
+                text +=
+                    "*Pases:* " +
+                    encodeURIComponent(passes) +
+                    "%0A";
+
+
+                if (message) {
+
+                    text +=
+                        "*Mensaje:* " +
+                        encodeURIComponent(message) +
+                        "%0A";
+
+                }
+
+
+                const whatsappUrl =
+                    "https://api.whatsapp.com/send?phone=" +
+                    phoneNumber +
+                    "&text=" +
+                    text;
+
+
+                window.open(
+                    whatsappUrl,
+                    "_blank"
+                );
+
+            });
+
+    </script>
+
+</body>
+</html>
