@@ -84,14 +84,17 @@ section{padding:90px 25px;max-width:1100px;margin:auto}
 /* CUENTA REGRESIVA */
 .countdown-section{background:var(--olive-dark);color:var(--white);max-width:none}
 .countdown-section .section-title{color:var(--cream)}
+.countdown-section .section-intro,.timeline-section .section-intro{color:var(--cream-dark)}
 .countdown-container{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:35px}
 .time-box{min-width:105px;padding:18px 20px;border:1px solid rgba(210,190,130,.45);background:rgba(255,255,255,.05)}
 .time-box span{display:block;font-family:var(--font-title);font-size:2.3rem;color:var(--gold-light)}
 .time-box label{display:block;margin-top:5px;font-size:.68rem;text-transform:uppercase;letter-spacing:2px;color:var(--cream-dark)}
 
 /* FECHA */
-.date-section{max-width:none;background:var(--cream);padding:80px 25px}
-.date-big{display:inline-block;padding:22px 45px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);font-family:var(--font-title);font-size:clamp(1.8rem,6vw,3.2rem);letter-spacing:6px;color:var(--olive-dark)}
+.date-big{display:inline-block;margin-top:50px;padding:22px 45px;border-top:3px solid var(--gold-light);border-bottom:3px solid var(--gold-light);font-family:var(--font-title);font-weight:600;font-size:clamp(1.8rem,6vw,3.2rem);letter-spacing:6px;color:var(--cream);text-shadow:0 2px 8px rgba(0,0,0,.25)}
+.countdown-section{padding-bottom:50px}
+.countdown-photo-section{max-width:none;background:var(--olive-dark);padding:0 25px 90px}
+.countdown-photo-section .family-photo-wrap{margin-top:0}
 
 /* MOMENTOS */
 .events-section{background:var(--cream-dark)}
@@ -154,6 +157,9 @@ section{padding:90px 25px;max-width:1100px;margin:auto}
 .dress-col h5{font-family:var(--font-title);font-size:1.1rem;color:var(--olive-dark);margin-bottom:10px}
 .dress-colors{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:16px 0 12px}
 .dress-colors span{width:34px;height:34px;border-radius:50%;border:2px solid var(--white);box-shadow:0 0 0 1px rgba(0,0,0,.15),0 3px 8px rgba(0,0,0,.12)}
+.dress-icon{width:2rem;height:2rem;fill:var(--gold);margin-bottom:15px}
+.dress-fun{margin-top:8px;font-style:italic}
+.dress-colors{max-width:340px;margin-left:auto;margin-right:auto}
 .dress-note{font-size:.78rem;font-style:italic;color:var(--text-light)}
 
 /* GALERÍA */
@@ -265,6 +271,8 @@ footer{font-size:2.5rem}
     <a href="#familia" class="scroll-down" aria-label="Continuar"><i class="fas fa-chevron-down"></i></a>
 </header>
 
+<div class="floral-divider"><span>✿</span></div>
+
 <!-- PADRES Y PADRINOS -->
 <section class="family-section" id="familia">
 
@@ -284,8 +292,8 @@ footer{font-size:2.5rem}
 
         <div class="family-block">
             <h3>Padres de la Novia</h3>
-            <p>Honorato Pariona Sanchez</p>
-            <p>Paulina Benedicta Arce Janampa</p>
+            <p>Honorato Pariona Sanchez <i class="fas fa-dove" style="color:var(--gold);font-size:.85em;margin-left:6px" title="En memoria"></i></p>
+            <p>Paulina Benedicta Arce viuda de Pariona</p>
         </div>
 
         <div class="floral-divider"><span>✿</span></div>
@@ -356,6 +364,8 @@ footer{font-size:2.5rem}
 
 </section>
 
+<div class="floral-divider"><span>✿</span></div>
+
 <!-- CUENTA REGRESIVA -->
 <section class="countdown-section" id="countdown">
 
@@ -369,12 +379,22 @@ footer{font-size:2.5rem}
         <div class="time-box"><span id="seconds">00</span><label>Segundos</label></div>
     </div>
 
+    <div class="date-big">19 · DICIEMBRE · 2026</div>
+
 </section>
 
-<!-- FECHA -->
-<section class="date-section" id="fecha">
-    <div class="date-big">19 · DICIEMBRE · 2026</div>
+<!-- FOTO BAJO LA CUENTA REGRESIVA -->
+<section class="countdown-photo-section">
+    <div class="family-photo-wrap">
+        <div class="family-photo-flower family-photo-flower-left">❀</div>
+        <div class="family-photo-flower family-photo-flower-right">✿</div>
+        <div class="family-photo-frame">
+            <img src="FOTO_GALERIA_2_AQUI.jpg" alt="Roberith y Yessenia">
+        </div>
+    </div>
 </section>
+
+<div class="floral-divider"><span>✿</span></div>
 
 <!-- MOMENTOS -->
 <section class="events-section">
@@ -409,6 +429,8 @@ footer{font-size:2.5rem}
 
 </section>
 
+<div class="floral-divider"><span>✿</span></div>
+
 <!-- LUGARES -->
 <section class="locations-section">
 
@@ -441,6 +463,8 @@ footer{font-size:2.5rem}
 
 </section>
 
+<div class="floral-divider"><span>✿</span></div>
+
 <!-- ITINERARIO -->
 <section class="timeline-section">
 
@@ -455,12 +479,16 @@ footer{font-size:2.5rem}
 
 </section>
 
+<div class="floral-divider"><span>✿</span></div>
+
 <!-- FOTO DESTACADA -->
 <section class="featured-photo">
     <div class="featured-photo-frame">
         <div class="featured-photo-text">Roberith & Yessenia</div>
     </div>
 </section>
+
+<div class="floral-divider"><span>✿</span></div>
 
 <!-- DETALLES -->
 <section class="details-section">
@@ -483,15 +511,23 @@ footer{font-size:2.5rem}
                 </div>
 
                 <div class="dress-col">
-                    <i class="fas fa-person-dress"></i>
+                    <svg class="dress-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="3.6" r="2.1"/><path d="M10.2 6.6h3.6l.9 4.4c.4 2.3 1.6 4.4 3.8 7.3.4.5.1 1.2-.5 1.4-1.9.6-4 .9-6 .9s-4.100-.3-6-.9c-.6-.2-.9-.9-.5-1.4 2.200-2.900 3.400-5 3.800-7.300z"/></svg>
                     <h5>Damas</h5>
                     <p>Vestido largo o de gala.</p>
+                    <p class="dress-fun">¡Es una boda llena de color! Ven con confianza y elige el tono que más te guste, nos encantará verte brillar con tu estilo.</p>
                     <div class="dress-colors" aria-label="Colores sugeridos para el vestido">
                         <span style="background:#68734a" title="Verde olivo"></span>
                         <span style="background:#a3ad8a" title="Verde salvia"></span>
                         <span style="background:#b39a5b" title="Dorado"></span>
+                        <span style="background:#c9a227" title="Mostaza"></span>
                         <span style="background:#b9745a" title="Terracota"></span>
+                        <span style="background:#e07a5f" title="Coral"></span>
+                        <span style="background:#d8a7a0" title="Rosa palo"></span>
                         <span style="background:#7a3b46" title="Vino"></span>
+                        <span style="background:#a68fb5" title="Lila"></span>
+                        <span style="background:#7f9bb0" title="Azul empolvado"></span>
+                        <span style="background:#2f6f5e" title="Esmeralda"></span>
+                        <span style="background:#1f3a5f" title="Azul marino"></span>
                     </div>
                     <p class="dress-note">Por favor, no vestir de blanco: es el color reservado para la novia.</p>
                 </div>
@@ -514,6 +550,8 @@ footer{font-size:2.5rem}
 
 </section>
 
+<div class="floral-divider"><span>✿</span></div>
+
 <!-- NUESTRA HISTORIA — CARRUSEL -->
 <section class="gallery-section" id="historia">
 
@@ -531,7 +569,7 @@ footer{font-size:2.5rem}
 
         <div class="carousel-track">
             <div class="carousel-slide active"><img src="FOTO_GALERIA_1_AQUI.jpg" alt="Roberith y Yessenia"></div>
-            <div class="carousel-slide"><img src="FOTO_GALERIA_2_AQUI.jpg" alt="Momento especial de Roberith y Yessenia"></div>
+            <div class="carousel-slide"><img src="FOTO_GALERIA_5_AQUI.jpg" alt="Momento especial de Roberith y Yessenia"></div>
             <div class="carousel-slide"><img src="FOTO_GALERIA_3_AQUI.jpg" alt="Recuerdo especial de los novios"></div>
         </div>
 
@@ -549,6 +587,8 @@ footer{font-size:2.5rem}
     <div class="floral-divider history-divider"><span>✿</span></div>
 
 </section>
+
+<div class="floral-divider"><span>✿</span></div>
 
 <!-- CONFIRMACIÓN -->
 <section class="rsvp-section" id="rsvp">
