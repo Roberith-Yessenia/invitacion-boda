@@ -25,7 +25,6 @@
     <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
     <style>
 
         /* =========================================================
@@ -80,7 +79,6 @@
         }
 
 
-       
         /* =========================================================
            REPRODUCTOR DE MÚSICA
         ========================================================== */
@@ -149,15 +147,9 @@
                     rgba(42, 50, 32, 0.58),
                     rgba(42, 50, 32, 0.58)
                 ),
-
                 url("portada.jpg")
                 center / cover no-repeat;
         }
-
-        /* FOTO_PORTADA_AQUI.jpg
-           ---------------------------------------------------------
-           REEMPLAZA ESTE ARCHIVO POR LA FOTO PRINCIPAL.
-        */
 
         .hero::before {
             content: "";
@@ -259,7 +251,7 @@
 
 
         /* =========================================================
-           SECCIONES
+           SECCIONES GENERALES
         ========================================================== */
 
         section {
@@ -302,6 +294,312 @@
             line-height: 1.8;
 
             font-size: 0.95rem;
+        }
+
+
+        /* =========================================================
+           PADRES Y PADRINOS
+        ========================================================== */
+
+        .family-section {
+            position: relative;
+
+            max-width: none;
+
+            padding: 100px 25px 105px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(137,147,107,0.08),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(179,154,91,0.08),
+                    transparent 25%
+                ),
+                var(--cream);
+
+            overflow: hidden;
+        }
+
+        .family-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+        .family-script {
+            font-family: var(--font-cursive);
+
+            font-size: clamp(2.5rem, 6vw, 4rem);
+
+            line-height: 1.15;
+
+            color: var(--olive-light);
+
+            margin: 5px auto 32px;
+
+            font-weight: 400;
+        }
+
+        .family-block {
+            margin-bottom: 32px;
+        }
+
+        .family-block h3 {
+            font-family: var(--font-title);
+
+            font-size: 1.05rem;
+
+            color: var(--text-dark);
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+        }
+
+        .family-block p {
+            font-family: var(--font-title);
+
+            font-size: 1.02rem;
+
+            color: #55534d;
+
+            line-height: 1.55;
+
+            margin: 0;
+        }
+
+        .floral-divider {
+            margin: 38px auto 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            color: var(--gold);
+
+            font-size: 1.1rem;
+        }
+
+        .floral-divider::before,
+        .floral-divider::after {
+            content: "";
+
+            width: 75px;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    var(--gold)
+                );
+        }
+
+        .floral-divider::after {
+            background:
+                linear-gradient(
+                    to left,
+                    transparent,
+                    var(--gold)
+                );
+        }
+
+        .floral-decoration {
+            position: absolute;
+
+            z-index: 1;
+
+            color: var(--olive-light);
+
+            opacity: 0.45;
+
+            pointer-events: none;
+        }
+
+        .floral-decoration span {
+            display: inline-block;
+
+            position: relative;
+        }
+
+        .floral-top {
+            top: 35px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            font-size: 1rem;
+
+            letter-spacing: 12px;
+        }
+
+        .floral-bottom {
+            bottom: 30px;
+
+            right: 6%;
+
+            font-size: 1.2rem;
+
+            transform: rotate(-15deg);
+
+            letter-spacing: 8px;
+        }
+
+        .family-section::before {
+            content: "❧";
+
+            position: absolute;
+
+            left: 4%;
+
+            top: 50%;
+
+            transform: translateY(-50%) rotate(-20deg);
+
+            font-family: serif;
+
+            font-size: 7rem;
+
+            color: var(--olive-light);
+
+            opacity: 0.18;
+        }
+
+        .family-section::after {
+            content: "❧";
+
+            position: absolute;
+
+            right: 4%;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%)
+                rotate(160deg);
+
+            font-family: serif;
+
+            font-size: 7rem;
+
+            color: var(--gold);
+
+            opacity: 0.15;
+        }
+
+
+
+
+        /* =========================================================
+           FOTO DE LOS NOVIOS — PADRES Y PADRINOS
+        ========================================================== */
+
+        .family-photo-wrap {
+            position: relative;
+            z-index: 2;
+
+            width: min(900px, 100%);
+            margin: 48px auto 0;
+            padding: 0 28px;
+        }
+
+        .family-photo-frame {
+            position: relative;
+            overflow: hidden;
+
+            width: 100%;
+            height: 430px;
+
+            background: var(--cream-dark);
+            border-radius: 2px;
+
+            box-shadow:
+                0 18px 45px rgba(63,74,47,0.12),
+                0 0 0 1px rgba(179,154,91,0.16);
+        }
+
+        .family-photo-frame::before {
+            content: "";
+            position: absolute;
+            inset: 14px;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.75);
+            pointer-events: none;
+        }
+
+        .family-photo-frame::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 35%;
+            z-index: 1;
+            background: linear-gradient(
+                to top,
+                rgba(63,74,47,0.16),
+                transparent
+            );
+            pointer-events: none;
+        }
+
+        .family-photo-frame img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.8s ease;
+        }
+
+        .family-photo-frame:hover img {
+            transform: scale(1.025);
+        }
+
+        .family-photo-caption {
+            margin-top: 22px;
+
+            font-family: var(--font-cursive);
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1;
+            color: var(--olive-light);
+        }
+
+        .family-photo-flower {
+            position: absolute;
+            z-index: 3;
+            color: var(--olive-light);
+            opacity: 0.55;
+            pointer-events: none;
+            font-family: serif;
+        }
+
+        .family-photo-flower-left {
+            left: 0;
+            bottom: -18px;
+            font-size: 4.8rem;
+            transform: rotate(-25deg);
+        }
+
+        .family-photo-flower-right {
+            right: 0;
+            top: -18px;
+            font-size: 4.2rem;
+            color: var(--gold);
+            transform: rotate(25deg);
         }
 
 
@@ -855,77 +1153,213 @@
         }
 
 
-       
-
         /* =========================================================
-           GALERÍA
+           GALERÍA / CARRUSEL
         ========================================================== */
 
         .gallery-section {
-            background: var(--cream-dark);
-        }
-
-        .gallery-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(12, 1fr);
-
-            grid-auto-rows: 190px;
-
-            gap: 15px;
-
-            margin-top: 45px;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-
             position: relative;
 
-            background: var(--olive-light);
+            background: var(--cream-dark);
+
+            overflow: hidden;
         }
 
-        .gallery-item img {
+        .wedding-carousel {
+            position: relative;
+
+            max-width: 850px;
+
+            height: 520px;
+
+            margin: 45px auto 0;
+
+            overflow: hidden;
+
+            background: #ddd;
+
+            box-shadow:
+                0 20px 45px rgba(48,51,41,0.14);
+        }
+
+        .carousel-track {
+            display: flex;
+
             width: 100%;
             height: 100%;
 
-            object-fit: cover;
+            transition:
+                transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+
+            height: 100%;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .carousel-slide::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(40,45,30,0.02),
+                    rgba(40,45,30,0.18)
+                );
+
+            pointer-events: none;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+
+            height: 100%;
 
             display: block;
 
-            transition: transform 0.5s ease;
+            object-fit: cover;
+
+            transition: transform 6s ease;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .carousel-slide.active img {
+            transform: scale(1.04);
         }
 
-        /* Foto grande */
-        .gallery-item:nth-child(1) {
-            grid-column: span 7;
+        .carousel-button {
+            position: absolute;
 
-            grid-row: span 2;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,0.7);
+
+            background: rgba(255,255,255,0.82);
+
+            color: var(--olive-dark);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            z-index: 5;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                color 0.3s ease;
         }
 
-        /* Foto vertical */
-        .gallery-item:nth-child(2) {
-            grid-column: span 5;
+        .carousel-button:hover {
+            background: var(--olive-dark);
 
-            grid-row: span 2;
+            color: white;
+
+            transform: translateY(-50%) scale(1.08);
         }
 
-        /* Foto pequeña */
-        .gallery-item:nth-child(3) {
-            grid-column: span 4;
+        .carousel-prev {
+            left: 20px;
         }
 
-        .gallery-item:nth-child(4) {
-            grid-column: span 4;
+        .carousel-next {
+            right: 20px;
         }
 
-        .gallery-item:nth-child(5) {
-            grid-column: span 4;
+        .carousel-dots {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-top: 22px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #b7b6aa;
+
+            cursor: pointer;
+
+            padding: 0;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--gold);
+
+            transform: scale(1.5);
+        }
+
+        .gallery-floral {
+            position: absolute;
+
+            font-family: serif;
+
+            color: var(--olive-light);
+
+            opacity: 0.22;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+        .gallery-floral-left {
+            left: -20px;
+
+            top: 20%;
+
+            font-size: 8rem;
+
+            transform: rotate(-25deg);
+        }
+
+        .gallery-floral-right {
+            right: -20px;
+
+            bottom: 12%;
+
+            font-size: 8rem;
+
+            color: var(--gold);
+
+            transform: rotate(155deg);
+        }
+
+        .history-divider {
+            margin-top: 45px;
         }
 
 
@@ -1065,6 +1499,48 @@
                 font-size: 4rem;
             }
 
+            .family-section {
+                padding: 80px 22px 85px;
+            }
+
+            .family-script {
+                font-size: 2.5rem;
+            }
+
+            .family-block {
+                margin-bottom: 27px;
+            }
+
+            .family-section::before,
+            .family-section::after {
+                font-size: 4rem;
+            }
+
+            .family-photo-wrap {
+                padding: 0 12px;
+                margin-top: 38px;
+            }
+
+            .family-photo-frame {
+                height: 360px;
+            }
+
+            .family-photo-frame::before {
+                inset: 10px;
+            }
+
+            .family-photo-flower-left {
+                left: -4px;
+                bottom: -12px;
+                font-size: 3.5rem;
+            }
+
+            .family-photo-flower-right {
+                right: -4px;
+                top: -12px;
+                font-size: 3.2rem;
+            }
+
             .intro-layout {
                 grid-template-columns: 1fr;
 
@@ -1105,23 +1581,30 @@
                 right: auto !important;
             }
 
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
+            .wedding-carousel {
+                height: 430px;
 
-                grid-auto-rows: 180px;
+                margin-top: 35px;
             }
 
-            .gallery-item:nth-child(1),
-            .gallery-item:nth-child(2) {
-                grid-column: span 2;
+            .carousel-button {
+                width: 40px;
+                height: 40px;
 
-                grid-row: span 2;
+                font-size: 0.8rem;
             }
 
-            .gallery-item:nth-child(3),
-            .gallery-item:nth-child(4),
-            .gallery-item:nth-child(5) {
-                grid-column: span 1;
+            .carousel-prev {
+                left: 12px;
+            }
+
+            .carousel-next {
+                right: 12px;
+            }
+
+            .gallery-floral-left,
+            .gallery-floral-right {
+                font-size: 5rem;
             }
 
             .featured-photo {
@@ -1163,18 +1646,21 @@
                 font-size: 1.7rem;
             }
 
-            .gallery-grid {
-                display: grid;
-
-                grid-template-columns: 1fr;
-
-                grid-auto-rows: 220px;
+            .family-photo-frame {
+                height: 300px;
             }
 
-            .gallery-item:nth-child(n) {
-                grid-column: span 1;
+            .family-photo-caption {
+                font-size: 2.2rem;
+            }
 
-                grid-row: span 1;
+            .wedding-carousel {
+                height: 390px;
+            }
+
+            .carousel-button {
+                width: 36px;
+                height: 36px;
             }
 
             footer {
@@ -1189,13 +1675,6 @@
 <body>
 
     <!-- =========================================================
-         BORDE DECORATIVO
-    ========================================================== -->
-
-    <div class="andean-border"></div>
-
-
-    <!-- =========================================================
          MÚSICA
     ========================================================== -->
 
@@ -1203,6 +1682,7 @@
         class="music-player"
         id="musicToggle"
         title="Reproducir / Pausar música"
+        aria-label="Reproducir o pausar música"
     >
         <i class="fas fa-music"></i>
     </div>
@@ -1242,11 +1722,108 @@
 
         </div>
 
-        <a href="#intro" class="scroll-down">
+        <a href="#familia" class="scroll-down" aria-label="Continuar">
             <i class="fas fa-chevron-down"></i>
         </a>
 
     </header>
+
+
+    <!-- =========================================================
+         PADRES Y PADRINOS
+    ========================================================== -->
+
+    <section class="family-section" id="familia">
+
+        <div class="floral-decoration floral-top">
+            <span>❀</span>
+            <span>✿</span>
+            <span>❀</span>
+        </div>
+
+        <div class="family-content">
+
+            <p class="family-script">
+                Con la bendición de Dios y<br>
+                nuestros queridos padres
+            </p>
+
+            <div class="family-block">
+
+              
+                <h3>Padres del Novio</h3>
+
+                <p>Pedro Carhuamanta León</p>
+                <p>Sofia Vivanco Rodriguez</p>
+
+            </div>
+
+
+            <div class="family-block">
+
+                 <h3>Padres de la Novia</h3>
+
+            <p>Honorato Pariona Sanchez</p>
+                <p>Paulina Benedicta Arce Janampa</p>
+
+
+            </div>
+
+
+            <div class="floral-divider">
+                <span>✿</span>
+            </div>
+
+
+            <p class="family-script">
+                Y en compañía de nuestros padrinos
+            </p>
+
+
+            <div class="family-block">
+
+            
+                <h3>Padrinos de Religioso</h3>
+
+                <p>Edwin Jiovani Mio Espinoza</p>
+                <p>Clemencia Dolores Mañuico Pillaca</p>
+
+            </div>
+
+
+         
+
+        </div>
+
+            <!-- FOTO DE LOS NOVIOS — PARTE FINAL DE PADRES Y PADRINOS -->
+
+            <div class="family-photo-wrap">
+
+                <div class="family-photo-flower family-photo-flower-left">
+                    ❀
+                </div>
+
+                <div class="family-photo-flower family-photo-flower-right">
+                    ✿
+                </div>
+
+                <div class="family-photo-frame">
+
+                    <img
+                        src="FOTO_FAMILIA_NOVIOS_AQUI.jpg"
+                        alt="Roberith y Yessenia"
+                    >
+
+           
+
+
+        <div class="floral-decoration floral-bottom">
+            <span>❀</span>
+            <span>✿</span>
+            <span>❀</span>
+        </div>
+
+    </section>
 
 
     <!-- =========================================================
@@ -1268,12 +1845,6 @@
         <div class="intro-layout">
 
             <div class="intro-photo">
-
-                <!-- =================================================
-                     FOTO 1 — FOTO DE LOS NOVIOS
-                     REEMPLAZA:
-                     FOTO_NOVIOS_AQUI.jpg
-                ================================================== -->
 
                 <img
                     src="FOTO_NOVIOS_AQUI.jpg"
@@ -1370,8 +1941,6 @@
 
         <div class="events-grid">
 
-            <!-- MISA -->
-
             <div class="event-card">
 
                 <i class="fas fa-church"></i>
@@ -1392,8 +1961,6 @@
             </div>
 
 
-            <!-- RECEPCIÓN -->
-
             <div class="event-card">
 
                 <i class="fas fa-glass-cheers"></i>
@@ -1412,8 +1979,6 @@
 
             </div>
 
-
-            <!-- LLEGADA -->
 
             <div class="event-card">
 
@@ -1458,7 +2023,8 @@
 
         <div class="location-card">
 
-            
+           
+
             <div class="location-info">
 
                 <i class="fas fa-church"></i>
@@ -1479,6 +2045,7 @@
                 <a
                     href="https://maps.app.goo.gl/dPmPNxaCaQNdVMm87"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn"
                 >
                     <i class="fas fa-location-dot"></i>
@@ -1494,7 +2061,7 @@
 
         <div class="location-card reverse">
 
-         
+          
 
             <div class="location-info">
 
@@ -1515,6 +2082,7 @@
                 <a
                     href="https://maps.app.goo.gl/2K9GA3JAV7UD9DrV7"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn"
                 >
                     <i class="fas fa-location-dot"></i>
@@ -1595,9 +2163,6 @@
 
             </div>
 
-
-            <!-- PUEDES AÑADIR MÁS MOMENTOS AQUÍ -->
-
         </div>
 
     </section>
@@ -1608,13 +2173,6 @@
     ========================================================== -->
 
     <section class="featured-photo">
-
-        <!--
-            FOTO DESTACADA
-
-            REEMPLAZA:
-            FOTO_DESTACADA_AQUI.jpg
-        -->
 
         <div class="featured-photo-frame">
 
@@ -1639,9 +2197,6 @@
 
         <div class="info-grid">
 
-
-            <!-- VESTIMENTA -->
-
             <div class="info-box">
 
                 <i class="fas fa-user-tie"></i>
@@ -1657,8 +2212,6 @@
             </div>
 
 
-            <!-- REGALO -->
-
             <div class="info-box">
 
                 <i class="fas fa-gift"></i>
@@ -1668,10 +2221,15 @@
                 </h4>
 
                 <p>
-                    Si deseas hacernos un presente,
-                    puedes utilizar la siguiente cuenta:<p> 
-                        BBVA:0011-0814-0248506836</p>
+                   Tu presencia es nuestro mejor regalo.
 
+Si deseas tener un detalle con nosotros, puedes hacerlo como parte de esta nueva etapa que comenzamos juntos.
+                </p>
+
+                <p>
+                    BBVA: 0011-0814-0248506836
+                </p> <p>
+                    CCI: 01181400024850683611
                 </p>
 
             </div>
@@ -1681,92 +2239,117 @@
     </section>
 
 
-   
-
     <!-- =========================================================
-         GALERÍA DE FOTOS
+         NUESTRA HISTORIA — CARRUSEL
     ========================================================== -->
 
-    <section class="gallery-section">
+    <section class="gallery-section" id="historia">
+
+        <div class="gallery-floral gallery-floral-left">
+            ❧
+        </div>
+
+        <div class="gallery-floral gallery-floral-right">
+            ❧
+        </div>
+
 
         <h2 class="section-title">
-            Nuestra historia
+            Un día, un recuerdo, toda una vida
         </h2>
 
+        <p class="section-intro">
+           Un momento único, una historia que comienza
+    y recuerdos que quedarán para siempre.
+        </p>
 
 
-        <div class="gallery-grid">
+        <div class="wedding-carousel" id="weddingCarousel">
+
+            <div class="carousel-track">
+
+                <div class="carousel-slide active">
+
+                    <img
+                        src="FOTO_GALERIA_1_AQUI.jpg"
+                        alt="Roberith y Yessenia"
+                    >
+
+                </div>
 
 
-            <!-- =================================================
-                 FOTO 1 — GRANDE HORIZONTAL
-            ================================================== -->
+                <div class="carousel-slide">
 
-            <div class="gallery-item">
+                    <img
+                        src="FOTO_GALERIA_2_AQUI.jpg"
+                        alt="Momento especial de Roberith y Yessenia"
+                    >
 
-                <img
-                    src="FOTO_GALERIA_1_AQUI.jpg"
-                    alt="Fotografía de Roberith y Yessenia"
-                >
-
-            </div>
+                </div>
 
 
-            <!-- =================================================
-                 FOTO 2 — VERTICAL
-            ================================================== -->
+                <div class="carousel-slide">
 
-            <div class="gallery-item">
+                    <img
+                        src="FOTO_GALERIA_3_AQUI.jpg"
+                        alt="Recuerdo especial de los novios"
+                    >
 
-                <img
-                    src="FOTO_GALERIA_2_AQUI.jpg"
-                    alt="Fotografía de los novios"
-                >
-
-            </div>
-
-
-            <!-- =================================================
-                 FOTO 3
-            ================================================== -->
-
-            <div class="gallery-item">
-
-                <img
-                    src="FOTO_GALERIA_3_AQUI.jpg"
-                    alt="Momento especial"
-                >
+                </div>
 
             </div>
 
 
-            <!-- =================================================
-                 FOTO 4
-            ================================================== -->
-
-            <div class="gallery-item">
-
-                <img
-                    src="FOTO_GALERIA_4_AQUI.jpg"
-                    alt="Momento especial"
-                >
-
-            </div>
+            <button
+                class="carousel-button carousel-prev"
+                id="carouselPrev"
+                type="button"
+                aria-label="Foto anterior"
+            >
+                <i class="fas fa-chevron-left"></i>
+            </button>
 
 
-            <!-- =================================================
-                 FOTO 5
-            ================================================== -->
+            <button
+                class="carousel-button carousel-next"
+                id="carouselNext"
+                type="button"
+                aria-label="Foto siguiente"
+            >
+                <i class="fas fa-chevron-right"></i>
+            </button>
 
-            <div class="gallery-item">
+        </div>
 
-                <img
-                    src="FOTO_GALERIA_5_AQUI.jpg"
-                    alt="Momento especial"
-                >
 
-            </div>
+        <div class="carousel-dots">
 
+            <button
+                class="carousel-dot active"
+                data-slide="0"
+                type="button"
+                aria-label="Ir a foto 1"
+            ></button>
+
+            <button
+                class="carousel-dot"
+                data-slide="1"
+                type="button"
+                aria-label="Ir a foto 2"
+            ></button>
+
+            <button
+                class="carousel-dot"
+                data-slide="2"
+                type="button"
+                aria-label="Ir a foto 3"
+            ></button>
+
+        </div>
+
+
+        <div class="floral-divider history-divider">
+            <span>✿</span>
         </div>
 
     </section>
@@ -1790,9 +2373,6 @@
 
         <form class="rsvp-form" id="whatsappForm">
 
-
-            <!-- NOMBRE -->
-
             <div class="form-group">
 
                 <label for="name">
@@ -1803,13 +2383,11 @@
                     type="text"
                     id="name"
                     required
-                    placeholder="Ej. Juan Pérez"
+                    placeholder=""
                 >
 
             </div>
 
-
-            <!-- ASISTENCIA -->
 
             <div class="form-group">
 
@@ -1832,8 +2410,6 @@
             </div>
 
 
-            <!-- PASES -->
-
             <div class="form-group">
 
                 <label for="passes">
@@ -1851,8 +2427,6 @@
 
             </div>
 
-
-            <!-- MENSAJE -->
 
             <div class="form-group">
 
@@ -1908,27 +2482,18 @@
 
     <script>
 
-
         /* =========================================================
            CUENTA REGRESIVA
-
-           FECHA CORRECTA:
-           19 DE DICIEMBRE DE 2026
-           3:00 PM
         ========================================================== */
 
         const weddingDate =
             new Date("December 19, 2026 15:00:00").getTime();
 
-
         const timer = setInterval(() => {
 
-            const now =
-                new Date().getTime();
+            const now = new Date().getTime();
 
-            const difference =
-                weddingDate - now;
-
+            const difference = weddingDate - now;
 
             if (difference > 0) {
 
@@ -1995,7 +2560,6 @@
         }, 1000);
 
 
-
         /* =========================================================
            REPRODUCTOR DE MÚSICA
         ========================================================== */
@@ -2022,6 +2586,10 @@
             else {
 
                 bgMusic.play()
+                    .then(() => {
+                        musicToggle.classList.add("playing");
+                        isPlaying = true;
+                    })
                     .catch(error => {
                         console.log(
                             "La reproducción automática fue bloqueada.",
@@ -2029,24 +2597,224 @@
                         );
                     });
 
-                musicToggle.classList.add("playing");
-
+                return;
             }
 
-            isPlaying = !isPlaying;
+            isPlaying = false;
 
         });
 
 
+        /* =========================================================
+           CARRUSEL — NUESTRA HISTORIA
+        ========================================================== */
+
+        const carousel =
+            document.getElementById("weddingCarousel");
+
+        const track =
+            carousel.querySelector(".carousel-track");
+
+        const slides =
+            carousel.querySelectorAll(".carousel-slide");
+
+        const dots =
+            document.querySelectorAll(".carousel-dot");
+
+        const prevButton =
+            document.getElementById("carouselPrev");
+
+        const nextButton =
+            document.getElementById("carouselNext");
+
+
+        let currentSlide = 0;
+
+        let carouselInterval;
+
+        let startX = 0;
+
+        let endX = 0;
+
+
+        function goToSlide(index) {
+
+            if (index < 0) {
+                index = slides.length - 1;
+            }
+
+            if (index >= slides.length) {
+                index = 0;
+            }
+
+            currentSlide = index;
+
+
+            track.style.transform =
+                `translateX(-${currentSlide * 100}%)`;
+
+
+            slides.forEach((slide, i) => {
+
+                slide.classList.toggle(
+                    "active",
+                    i === currentSlide
+                );
+
+            });
+
+
+            dots.forEach((dot, i) => {
+
+                dot.classList.toggle(
+                    "active",
+                    i === currentSlide
+                );
+
+            });
+
+        }
+
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+
+        function previousSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+                nextSlide();
+                restartCarousel();
+            }
+        );
+
+
+        prevButton.addEventListener(
+            "click",
+            () => {
+                previousSlide();
+                restartCarousel();
+            }
+        );
+
+
+        dots.forEach((dot) => {
+
+            dot.addEventListener(
+                "click",
+                () => {
+
+                    goToSlide(
+                        Number(dot.dataset.slide)
+                    );
+
+                    restartCarousel();
+
+                }
+            );
+
+        });
+
+
+        function startCarousel() {
+
+            carouselInterval =
+                setInterval(() => {
+                    nextSlide();
+                }, 5000);
+
+        }
+
+
+        function restartCarousel() {
+
+            clearInterval(carouselInterval);
+
+            startCarousel();
+
+        }
+
+
+        /* =========================================================
+           SWIPE EN CELULAR
+        ========================================================== */
+
+        carousel.addEventListener(
+            "touchstart",
+            (event) => {
+
+                startX =
+                    event.touches[0].clientX;
+
+            },
+            { passive: true }
+        );
+
+
+        carousel.addEventListener(
+            "touchend",
+            (event) => {
+
+                endX =
+                    event.changedTouches[0].clientX;
+
+                const difference =
+                    startX - endX;
+
+
+                if (Math.abs(difference) > 50) {
+
+                    if (difference > 0) {
+                        nextSlide();
+                    }
+                    else {
+                        previousSlide();
+                    }
+
+                    restartCarousel();
+
+                }
+
+            },
+            { passive: true }
+        );
+
+
+        /* =========================================================
+           PAUSAR AUTOPLAY CON MOUSE
+        ========================================================== */
+
+        carousel.addEventListener(
+            "mouseenter",
+            () => {
+                clearInterval(carouselInterval);
+            }
+        );
+
+
+        carousel.addEventListener(
+            "mouseleave",
+            () => {
+                startCarousel();
+            }
+        );
+
+
+        /* INICIAR CARRUSEL */
+
+        goToSlide(0);
+
+        startCarousel();
+
 
         /* =========================================================
            CONFIRMACIÓN POR WHATSAPP
-
-           NÚMERO:
-           +51 973 641 507
-
-           Para WhatsApp se utiliza:
-           51973641507
         ========================================================== */
 
         document
@@ -2087,33 +2855,33 @@
 
 
                 let text =
-                    "*Confirmación de Asistencia - Boda Roberith & Yessenia*%0A%0A";
+                    "*Confirmación de Asistencia - Boda Roberith & Yessenia*\n\n";
 
 
                 text +=
                     "*Nombre:* " +
-                    encodeURIComponent(name) +
-                    "%0A";
+                    name +
+                    "\n";
 
 
                 text +=
                     "*Estado:* " +
-                    encodeURIComponent(attendance) +
-                    "%0A";
+                    attendance +
+                    "\n";
 
 
                 text +=
                     "*Pases:* " +
-                    encodeURIComponent(passes) +
-                    "%0A";
+                    passes +
+                    "\n";
 
 
                 if (message) {
 
                     text +=
                         "*Mensaje:* " +
-                        encodeURIComponent(message) +
-                        "%0A";
+                        message +
+                        "\n";
 
                 }
 
@@ -2122,7 +2890,7 @@
                     "https://api.whatsapp.com/send?phone=" +
                     phoneNumber +
                     "&text=" +
-                    text;
+                    encodeURIComponent(text);
 
 
                 window.open(
